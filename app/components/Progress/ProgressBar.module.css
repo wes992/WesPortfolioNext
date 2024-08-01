@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: 1.5rem;
+}
+
+.barContainer {
+  height: 1rem;
+  position: relative;
+  width: 40ch;
+  background-color: rgb(var(--background-start-rgb));
+  border-radius: var(--border-radius);
+}
+
+.bar {
+  position: absolute;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(var(--accent-color), 0.5),
+    rgba(var(--accent-color), 1),
+    rgba(var(--accent-color), 0.5)
+  );
+  border-radius: var(--border-radius);
+}
+
+.percentage {
+}
