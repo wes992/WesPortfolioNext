@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 2rem;
+  margin: 0 auto;
+
+  & span {
+    color: rgb(var(--accent-color));
+  }
+}
