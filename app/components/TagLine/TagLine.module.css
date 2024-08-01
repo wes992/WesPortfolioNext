@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(va(--overlay-rgba));
+  padding: 200px;
+}
+
+.header {
+  width: 10ch;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
