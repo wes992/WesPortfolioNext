@@ -1,0 +1,13 @@
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.projects {
+  display: flex;
+
+  & .project {
+    height: 100px;
+    flex: 1;
+  }
+}
