@@ -3,19 +3,25 @@
 import { RefObject, useEffect } from "react";
 
 const DEFAULT_SCALE = 0.7;
-const DEFAULT_OPTIONS = { root: null, rootMargin: "0px", threshold: 0 };
+const DEFAULT_OPTIONS = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0,
+  offset: 64,
+};
 
 export const useScrollEffect = (
   containerRef: RefObject<HTMLElement>,
   scale = DEFAULT_SCALE,
   options: Partial<typeof DEFAULT_OPTIONS> = DEFAULT_OPTIONS
 ) => {
+  const combinedOptions = { ...DEFAULT_OPTIONS, ...options };
   const callback = (entries: any[]) => {
     const [entry] = entries;
     const scrollCallback = () => {
       const windowOffset = window.scrollY;
       const itemOffset = entry.target.offsetTop;
-      const offset = windowOffset + itemOffset;
+      const offset = windowOffset + itemOffset - combinedOptions.offset;
       const scaledOffset = `${offset * scale}px`;
 
       entry!.target.style.backgroundPositionY = scaledOffset;
