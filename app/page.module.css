@@ -1,3 +1,21 @@
+.nav {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  gap: 8rem;
+  padding: 0.5rem;
+  box-shadow: 0 2px 3px rgb(var(--callout-border-rgb));
+
+  & .logo {
+  }
+
+  & .links {
+    display: flex;
+    gap: 1rem;
+    text-transform: uppercase;
+  }
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -20,24 +38,29 @@
   background-image: url(/images/silhouette.png);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right -25% bottom 50%;
-  /* background-attachment: fixed; */
-}
-@media screen and (max-width: 1200px) {
-  .section:nth-child(1) {
-    background-position: right -40% bottom 50%;
-  }
+  background-position: right -25% bottom 60%;
+  height: calc(100vh - 4rem);
 }
 
-/* .section:nth-child(2) {
-  background-image: url(/images/city2.jpg);
-  background-size: cover;
-} */
-/* .section:nth-child(3) {
-  background-image: url(/images/city3.jpg);
-  background-size: cover;
-} */
 .section:nth-child(4) {
   background-image: url(/images/city1.jpg);
   background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+}
+
+@media screen and (max-width: 486px) {
+  .section {
+    height: 100%;
+  }
+
+  .section:nth-child(1) {
+    background: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section:nth-child(1) {
+    background-position: right -40% bottom 60%;
+  }
 }
