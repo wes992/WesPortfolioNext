@@ -8,18 +8,9 @@ const Portfolio = ({}) => {
     <div className={styles.container}>
       <Header number={"02"} title="Portfolio" subtitle="My Latest Work:" />
       <div className={styles.projects}>
-        <div
-          className={styles.project}
-          style={{ backgroundColor: "white" }}
-        ></div>
-        <div
-          className={styles.project}
-          style={{ backgroundColor: "red" }}
-        ></div>
-        <div
-          className={styles.project}
-          style={{ backgroundColor: "blue" }}
-        ></div>
+        <div className={styles.project} style={{ backgroundColor: "white" }} />
+        <div className={styles.project} style={{ backgroundColor: "red" }} />
+        <div className={styles.project} style={{ backgroundColor: "blue" }} />
       </div>
     </div>
   );
