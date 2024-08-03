@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  flex-direction: column;
+}
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(var(--overlay-rgba));
+}
