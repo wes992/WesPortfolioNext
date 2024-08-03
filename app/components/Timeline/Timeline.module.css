@@ -1,0 +1,160 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timelineItem {
+  display: flex;
+  position: relative;
+}
+
+.connectorLine {
+  width: 1px;
+  height: 100%;
+  translate: 1.25rem 12%;
+  opacity: 0.3;
+
+  &.desktop {
+    height: 1px;
+    width: 1rem;
+    translate: 0 1.25rem;
+  }
+}
+
+.mobileConnectorLine {
+  position: absolute;
+  left: 20%;
+  top: -2rem;
+  width: 0.25rem;
+  height: 2rem;
+  opacity: 0.6;
+  display: none;
+
+  &:nth-child(2) {
+    left: 75%;
+  }
+}
+
+.dateContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.date {
+  flex: 3;
+  min-width: 110px;
+  /* color: rgb(var(--accent-color)); */
+  padding-top: 0.5rem;
+}
+
+.icon {
+  flex: 1;
+  padding: 0.25rem 0;
+  border-radius: 0.5rem;
+  z-index: 20;
+
+  &.mobile {
+    display: none;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+  }
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(var(--callout-border-rgb));
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.5rem;
+  background-color: rgb(var(--callout-rgb)); /* change this */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  z-index: 10;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  max-width: 80%;
+}
+
+.location {
+  color: rgb(var(--accent-color));
+  margin-bottom: 2rem;
+  font-size: 0.75rem;
+  max-width: 80%;
+
+  & span {
+    display: none;
+  }
+}
+
+.description {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.techChip {
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(125, 125, 125, 0.7); /* change this */
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  margin: 0.5rem;
+}
+
+.link {
+  color: rgb(var(--forground-rgb));
+  font-size: 1rem;
+  margin: 1rem auto;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 486px) {
+  .dateContainer {
+    display: none;
+  }
+
+  .connectorLine {
+    display: block;
+
+    &.desktop {
+      display: none;
+    }
+  }
+
+  .icon.mobile {
+    display: block;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .location {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+
+    & span {
+      display: inline-block;
+    }
+  }
+  .cardContainer {
+    width: 96%;
+  }
+}
