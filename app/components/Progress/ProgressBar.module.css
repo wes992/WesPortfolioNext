@@ -1,14 +1,16 @@
 .container {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+  /* margin-left: 1.5rem;
   gap: 2rem;
-  margin-left: 1.5rem;
+  min-width: 70%; */
 }
 
 .barContainer {
   height: 1rem;
   position: relative;
-  width: 40ch;
+  min-width: 80%;
   background-color: rgb(var(--background-start-rgb));
   border-radius: var(--border-radius);
 }
@@ -26,4 +28,11 @@
 }
 
 .percentage {
+  line-height: 1em;
 }
+
+/* @media screen and (max-width: 486px) {
+  .barContainer {
+    width: 60%;
+  }
+} */
