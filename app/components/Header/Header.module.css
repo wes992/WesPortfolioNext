@@ -4,10 +4,24 @@
   align-items: center;
   width: 100%;
   text-transform: uppercase;
-  padding: 2rem;
-  margin: 0 auto;
+  margin: 6rem auto;
 
   & span {
     color: rgb(var(--accent-color));
+  }
+}
+
+@media screen and (max-width: 486px) {
+  .header {
+    align-items: flex-start;
+    margin: 2rem auto;
+
+    & h2 {
+      font-size: 48px;
+    }
+
+    & h4 {
+      font-size: 1.25rem;
+    }
   }
 }
