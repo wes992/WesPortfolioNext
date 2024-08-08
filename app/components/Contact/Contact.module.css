@@ -1,7 +1,8 @@
 .container {
   background-color: rgb(var(--callout-rgb));
   border: 1px solid rbg(var(--callout-border-rgb));
-  border-radius: var(--border-radius);
+  /* border-radius: var(--border-radius); */
+  height: 100%;
   min-height: 400px;
   width: 80%;
   display: flex;
@@ -10,11 +11,54 @@
   padding: 2rem;
   margin: 2rem;
 
-  & .text,
+  & .textContainer,
   .form {
     flex: 1;
     height: 300px;
-    text-align: center;
+    text-align: left;
+  }
+  & .text {
+    line-height: 2rem;
+  }
+
+  & .textContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    & > input,
+    & > textarea {
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      background-color: rgb(var(--callout-border-rgb));
+      /* 
+      border: 1px solid rgba(var(--accent-color), 0.7); */
+    }
+
+    & > input {
+      height: 2.5rem;
+      font-size: 1.1rem;
+    }
+
+    & > textarea {
+      resize: none;
+      font-size: 1.1rem;
+    }
+
+    & > button {
+      height: 3rem;
+      font-size: 1.2rem;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: rgba(var(--accent-color), 0.4);
+      border: 1px solid rgba(var(--accent-color), 0.7);
+    }
   }
 
   & .footer {
@@ -33,6 +77,7 @@
 @media screen and (max-width: 486px) {
   .container {
     width: 100%;
+    margin: 0;
   }
 
   .content {

@@ -16,34 +16,30 @@ const skills = [
 ];
 
 const Skills = ({}) => {
-  const skillsRef = useRef(null);
-  useScrollEffect(skillsRef, 0.95, { threshold: 0.0, offset: -40 });
+  // const skillsRef = useRef(null);
+  // useScrollEffect(skillsRef, 0.9, { threshold: 0.0, offset: -20 });
 
   return (
-    // <section className={styles.section} id="skills" ref={ref}>
-    <div className={styles.overlay}>
-      <div ref={skillsRef} className={styles.container}>
-        <Header
-          number="01"
-          title="Professional"
-          subtitle="My skill set and proficiency"
-        />
+    <div className={styles.container}>
+      <Header
+        number="01"
+        title="Professional"
+        subtitle="My skill set and proficiency"
+      />
 
-        <div className={styles.skillsContainer}>
-          {skills.map((skill) => {
-            return (
-              <div className={styles.skill} key={skill.title}>
-                <div className={styles.title}>{skill.title}</div>
-                <div className={styles.progress}>
-                  <ProgressBar percentage={skill.percentage} />
-                </div>
+      <div className={styles.skillsContainer}>
+        {skills.map((skill) => {
+          return (
+            <div className={styles.skill} key={skill.title}>
+              <div className={styles.title}>{skill.title}</div>
+              <div className={styles.progress}>
+                <ProgressBar percentage={skill.percentage} />
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </div>
-    // </section>
   );
 };
 

@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import styles from "./page.module.css";
 import { useScrollEffect } from "./utils/eventListeners";
 import { TagLine } from "./components/TagLine";
@@ -7,44 +6,43 @@ import { Skills } from "./components/Skills/Skills";
 import { useRef } from "react";
 import { Portfolio } from "./components/Portfolio";
 import { Experience } from "./components/Experience";
-import Link from "next/link";
 import { Contact } from "./components/Contact";
-import { Logo } from "./components/icons/Logo";
+import { Nav } from "./components/Nav";
 
 export default function Home() {
   const landingRef = useRef(null);
+  const skillsRef = useRef(null);
   useScrollEffect(landingRef);
+  useScrollEffect(skillsRef, 0.8);
 
-  // const skillsRef = useRef(null);
-  // useScrollEffect(skillsRef, 0.1, { threshold: 0.1 });
   return (
     <>
-      <nav className={styles.nav}>
-        <Link href="/">
-          <Logo height="40px" width="40px" color={"rgb(var(--accent-color))"} />
-        </Link>
-        <div className={styles.links}>
-          <Link href="#skills">skills</Link>
-          <Link href="#portfolio">Portfolio</Link>
-          <Link href="#experience">experience</Link>
-          <Link href="#contact">contact</Link>
-        </div>
-      </nav>
+      <Nav />
       <main className={styles.main}>
         <section className={styles.section} ref={landingRef} id="section1">
-          <TagLine text={"I'm Wes Hampton."} />
+          <div className={styles.overlay}>
+            <TagLine text={"I'm Wes Hampton."} />
+          </div>
         </section>
-        <section className={styles.section} id="skills">
-          <Skills />
+        <section className={styles.section} id="skills" ref={skillsRef}>
+          <div className={styles.overlay}>
+            <Skills />
+          </div>
         </section>
         <section className={styles.section} id="portfolio">
-          <Portfolio />
+          <div className={styles.overlay}>
+            <Portfolio />
+          </div>
         </section>
         <section className={styles.section} id="experience">
-          <Experience />
+          <div className={styles.overlay}>
+            <Experience />
+          </div>
         </section>
         <section className={styles.section} id="contact">
-          <Contact />
+          <div className={styles.overlay}>
+            <Contact />
+          </div>
         </section>
       </main>
     </>

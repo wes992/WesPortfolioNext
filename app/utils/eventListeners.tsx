@@ -7,7 +7,7 @@ const DEFAULT_OPTIONS = {
   root: null,
   rootMargin: "0px",
   threshold: 0,
-  offset: 64,
+  offset: 0,
 };
 
 export const useScrollEffect = (
@@ -15,13 +15,18 @@ export const useScrollEffect = (
   scale = DEFAULT_SCALE,
   options: Partial<typeof DEFAULT_OPTIONS> = DEFAULT_OPTIONS
 ) => {
-  const combinedOptions = { ...DEFAULT_OPTIONS, ...options };
+  const combinedOptions = {
+    ...DEFAULT_OPTIONS,
+    ...options,
+    root: containerRef.current,
+  };
   const callback = (entries: any[]) => {
     const [entry] = entries;
     const scrollCallback = () => {
       const windowOffset = window.scrollY;
+      const scrollHeight = combinedOptions.root?.scrollHeight || 0;
       const itemOffset = entry.target.offsetTop;
-      const offset = windowOffset + itemOffset - combinedOptions.offset;
+      const offset = windowOffset - itemOffset - scrollHeight;
       const scaledOffset = `${offset * scale}px`;
 
       entry!.target.style.backgroundPositionY = scaledOffset;
@@ -34,10 +39,7 @@ export const useScrollEffect = (
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callback, {
-      ...DEFAULT_OPTIONS,
-      ...options,
-    });
+    const observer = new IntersectionObserver(callback, combinedOptions);
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }

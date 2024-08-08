@@ -1,61 +1,60 @@
-.nav {
-  display: flex;
-  height: 4rem;
-  align-items: center;
-  gap: 8rem;
-  padding: 0.5rem;
-  box-shadow: 0 2px 3px rgb(var(--callout-border-rgb));
-
-  & .logo {
-  }
-
-  & .links {
-    display: flex;
-    gap: 1rem;
-    text-transform: uppercase;
-  }
-}
-
 .main {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; 
   min-height: 100vh;
+  */
 }
 
 .section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  /* overflow: hidden; */
   position: relative;
+
+  & .overlay {
+    display: flex;
+    height: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    width: -webkit-fill-available;
+    background-color: rgba(var(--overlay-rgba));
+  }
 }
 
 .section:nth-child(1) {
-  background-image: url(/images/silhouette.png);
+  background-image: url(/images/me.png);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right -25% bottom 60%;
-  height: calc(100vh - 4rem);
+  background-position: right -15% bottom 60%;
+  /* height: calc(100vh - 4rem); */
+}
+.section:nth-child(2) {
+  background-image: url(/images/coding-vertical.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.section:nth-child(4) {
-  background-image: url(/images/city1.jpg);
-  background-size: cover;
-  min-height: 100vh;
+.section:nth-child(5) {
+  min-height: 100%;
   height: 100%;
 }
 
 @media screen and (max-width: 486px) {
   .section {
     height: 100%;
+
+    & .overlay {
+      min-height: 100%;
+    }
   }
 
   .section:nth-child(1) {
     background: none;
+    /* background-position-y: 0; */
   }
 }
 
