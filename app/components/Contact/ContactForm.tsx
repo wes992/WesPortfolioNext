@@ -6,7 +6,7 @@ export type FormState = {
   message: string;
 };
 
-const ContactForm = ({ onSubmit = () => {} }) => {
+const ContactForm = ({ onSubmit = () => {} }: { onSubmit: any }) => {
   const [state, formAction] = useFormState<FormState>(onSubmit, {
     message: "",
   });
