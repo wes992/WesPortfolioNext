@@ -24,6 +24,7 @@ const Portfolio = ({}) => {
       <div className={styles.projects}>
         {projects?.map((project: any) => (
           <Link
+            key={project.url}
             href={project.url}
             className={styles.project}
             target="_blank"
