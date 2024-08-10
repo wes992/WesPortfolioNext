@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Timeline.module.css";
 import { timelineItemType } from "./TimelineItems";
-import { Office } from "../icons/office";
+import { Office } from "../icons/Office";
 
 type TimelineItemProps = {
   color: string;
@@ -24,30 +24,25 @@ const TimelineItem = ({ color = "", item }: TimelineItemProps) => {
 
 export { TimelineItem };
 
-const CardContent = ({ item }) => {
+const CardContent = ({ item }: { item: any }) => {
+  const date = `${item.dates.from} - ${item.dates.to}`;
+  const location = `${item.location.city},${item.location.state}`;
   return (
     <div className={styles.cardContainer}>
-      <div className={styles.date}>{item.date}</div>
+      <div className={styles.date}>{date}</div>
       <div className={styles.title}>{item.title}</div>
       <div className={styles.location}>
-        {item.location}
-        <span>|{item.date}</span>
+        {location}
+        <span>|{date}</span>
       </div>
       <div className={styles.description}>{item.description}</div>
       <div className={styles.techStack}>
-        {item.tech.map((tech, index) => (
+        {item.technologies.map((tech: any, index: number) => (
           <span key={index + tech} className={styles.techChip}>
             {tech}
           </span>
         ))}
       </div>
-      {/* <Link
-    href="#"
-    className={styles.link}
-    style={{ backgroundColor: color }}
-  >
-    {item.buttonText}
-  </Link> */}
     </div>
   );
 };

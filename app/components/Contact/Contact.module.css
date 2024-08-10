@@ -36,7 +36,7 @@
       border-radius: 0.5rem;
       margin-bottom: 1rem;
       padding: 0.5rem;
-      background-color: rgb(var(--callout-border-rgb));
+      background-color: rgba(var(--foreground-rgb), 0.8);
       /* 
       border: 1px solid rgba(var(--accent-color), 0.7); */
     }
