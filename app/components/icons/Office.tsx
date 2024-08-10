@@ -26,3 +26,5 @@ const Office = React.forwardRef<SVGSVGElement, IconProps>(
 );
 
 export { Office };
+
+Office.displayName = "Office";

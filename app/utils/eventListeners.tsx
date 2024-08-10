@@ -40,14 +40,15 @@ export const useScrollEffect = (
 
   useEffect(() => {
     const observer = new IntersectionObserver(callback, combinedOptions);
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    const ref = containerRef.current;
+    if (ref) {
+      observer.observe(ref);
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (ref) {
+        observer.unobserve(ref);
       }
     };
-  }, [containerRef, options]);
+  }, [containerRef, options, combinedOptions, callback]);
 };
