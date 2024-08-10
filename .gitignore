@@ -37,4 +37,4 @@ yarn-error.log*
 next-env.d.ts
 
 # config
-/lib/firebase/config
+/lib/firebase/config.ts
