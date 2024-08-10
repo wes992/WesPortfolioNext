@@ -50,5 +50,5 @@ export const useScrollEffect = (
         observer.unobserve(ref);
       }
     };
-  }, [containerRef, options, combinedOptions, callback]);
+  }, [containerRef.current, combinedOptions, callback]);
 };
