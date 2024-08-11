@@ -5,10 +5,9 @@ import Link from "next/link";
 import { LinkedIn } from "../icons/LinkedIn";
 import { GitHub } from "../icons/GitHub";
 
-const Contact = ({}) => {
-  const host = window?.location.origin ?? "localhost:3000";
+const Contact = () => {
   const onSubmitForm = async (_: FormData, formData: FormData) => {
-    const res = await fetch(`${host}/api/post-form`, {
+    const res = await fetch("/api/post-form", {
       method: "POST",
       body: formData,
     });
