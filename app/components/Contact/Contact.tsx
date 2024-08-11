@@ -6,8 +6,9 @@ import { LinkedIn } from "../icons/LinkedIn";
 import { GitHub } from "../icons/GitHub";
 
 const Contact = ({}) => {
+  const host = window.location.origin ?? "localhost:3000";
   const onSubmitForm = async (_: FormData, formData: FormData) => {
-    const res = await fetch("http://localhost:3000/api/post-form", {
+    const res = await fetch(`${host}/api/post-form`, {
       method: "POST",
       body: formData,
     });

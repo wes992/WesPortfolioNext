@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Contact.module.css";
 import { useFormState, useFormStatus } from "react-dom";
 
@@ -11,9 +11,18 @@ const ContactForm = ({ onSubmit = () => {} }: { onSubmit: any }) => {
     message: "",
   });
   const { pending } = useFormStatus();
+  const ref = useRef<any>();
 
   return (
-    <form action={formAction} className={styles.form}>
+    <form
+      ref={ref}
+      action={(formData) => {
+        // @ts-ignore
+        formAction(formData);
+        ref.current.reset();
+      }}
+      className={styles.form}
+    >
       {state.message}
       <label htmlFor="name">Name</label>
       <input type="text" name="name" />
