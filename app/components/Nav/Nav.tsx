@@ -43,9 +43,6 @@ const Nav = ({}) => {
   return (
     <nav className={styles.nav}>
       <Hamburger open={open} onClick={() => setOpen((prev) => !prev)} />
-      {/* <Link href="/">
-        <Logo height="40px" width="40px" color={"rgb(var(--accent-color))"} />
-      </Link> */}
       <div className={styles.links}>
         {links.map((link) => (
           <Link key={link.id} href={link.route}>

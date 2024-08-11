@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "./Contact.module.css";
 import { ContactForm, FormState } from "./ContactForm";
+import Link from "next/link";
+import { LinkedIn } from "../icons/LinkedIn";
+import { GitHub } from "../icons/GitHub";
 
 const Contact = ({}) => {
   const onSubmitForm = async (_: FormData, formData: FormData) => {
@@ -24,7 +27,22 @@ const Contact = ({}) => {
         </div>
         <ContactForm onSubmit={onSubmitForm} />
       </div>
-      <div className={styles.footer}></div>
+      <div className={styles.footer}>
+        <Link
+          href={"https://www.linkedin.com/in/wes992/"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LinkedIn height="40px" width="40px" fill={"white"} />
+        </Link>
+        <Link
+          href={"https://github.com/wes992"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitHub height="40px" width="40px" fill={"white"} />
+        </Link>
+      </div>
     </div>
   );
 };
