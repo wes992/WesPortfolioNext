@@ -20,8 +20,8 @@ const Contact = () => {
         <div className={styles.textContainer}>
           <p className={styles.text}>Want to chat?</p>
           <p className={styles.text}>Need a proposal?</p>
+          <p className={styles.text}>Send me a message or email me at</p>
           <p className={styles.text}>
-            Send me a message or email me at
             <a href="mailto:productivejs@gmail.com"> productivejs@gmail.com</a>
           </p>
         </div>

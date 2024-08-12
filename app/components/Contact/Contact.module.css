@@ -18,6 +18,15 @@
   }
   & .text {
     line-height: 2rem;
+
+    & > a {
+      font-size: 1.1rem;
+      color: rgb(var(--accent-color));
+    }
+
+    &:nth-child(3) {
+      margin-top: 2rem;
+    }
   }
 
   & .textContainer {
