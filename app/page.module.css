@@ -29,8 +29,7 @@
   background-image: url(/images/me.png);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right -15% bottom 60%;
-  /* height: calc(100vh - 4rem); */
+  background-position: right -10% bottom 60%;
 }
 .section:nth-child(2) {
   background-image: url(/images/coding-vertical.jpg);
@@ -53,13 +52,14 @@
   }
 
   .section:nth-child(1) {
-    background: none;
-    /* background-position-y: 0; */
+    background-size: cover;
+    background-position: center bottom;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 600px) {
   .section:nth-child(1) {
-    background-position: right -40% bottom 60%;
+    background-size: cover;
+    background-position: center bottom;
   }
 }
