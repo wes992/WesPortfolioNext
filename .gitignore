@@ -38,3 +38,4 @@ next-env.d.ts
 
 # config
 .firebase
+lib/firebase/config.ts
