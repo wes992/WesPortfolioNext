@@ -46,7 +46,10 @@ const TypeWriter = (options: TypeWriterOptions) => {
   useEffect(() => {
     if (index.current <= text.length) {
       const timeout = setTimeout(() => {
-        setCurrentText((val) => [...val, <Character character={char} />]);
+        setCurrentText((val) => [
+          ...val,
+          <Character key={char + index.current} character={char} />,
+        ]);
         index.current += 1;
         if (index.current > text.length) setHideCursor(true);
       }, currentDelay);
