@@ -21,7 +21,10 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.section} ref={landingRef} id="section1">
           <div className={styles.overlay}>
-            <TagLine text={"I'm Wes Hampton."} />
+            <TagLine
+              text={"I'm Wes Hampton."}
+              subtitle={"Web Developer and Entrepreneur"}
+            />
           </div>
         </section>
         <section className={styles.section} id="skills" ref={skillsRef}>
