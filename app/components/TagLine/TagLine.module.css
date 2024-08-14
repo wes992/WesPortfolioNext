@@ -1,20 +1,23 @@
 .container {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   gap: 3rem;
   height: 100vh;
   padding: 1rem;
-  background-color: rgba(va(--overlay-rgba));
+  margin-left: 4rem;
 }
 
 .header {
+  min-height: 255px;
   width: 10ch;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .subtitle {
+  min-width: 380px;
   font-size: 2rem;
   font-weight: 400;
   text-transform: uppercase;

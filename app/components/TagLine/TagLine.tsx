@@ -1,28 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./TagLine.module.css";
-import { Character } from "../Character/Character";
+import { TypeWriter } from "../TypeWriter";
 
 type TagLineProps = {
   text: string;
+  subtitle: string;
 };
 
-const TagLine = ({ text }: TagLineProps) => {
-  const wordSplit = text.split(" ");
+const TagLine = ({ text = "", subtitle = "" }: TagLineProps) => {
+  const delay = 2000;
+  const [showSubtitle, setShowSubtitle] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowSubtitle(true);
+    }, delay);
+  }, [delay]);
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        {wordSplit.map((string) => {
-          const charSplit = string.split("");
-          return (
-            <h2 key={string}>
-              {charSplit.map((character: string) => (
-                <Character key={character} character={character} />
-              ))}
-            </h2>
-          );
-        })}
+        <h2>
+          <TypeWriter text={text} delay={100} forceHideCursor />
+        </h2>
       </div>
-      <div className={styles.subtitle}>Web Developer and Entrepreneur</div>
+      <div className={styles.subtitle}>
+        {showSubtitle && <TypeWriter text={subtitle} />}
+      </div>
     </div>
   );
 };
