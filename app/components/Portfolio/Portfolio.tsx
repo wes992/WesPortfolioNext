@@ -12,8 +12,8 @@ const Portfolio = ({}) => {
   useEffect(() => {
     const fetchItems = async () => {
       const items = await getProjects();
-
-      setProjects(items);
+      const filteredItems = items?.filter((item) => item.show);
+      setProjects(filteredItems);
     };
 
     fetchItems();
