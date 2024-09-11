@@ -1,0 +1,9 @@
+env:
+  - variable: API_KEY
+    secret: ${{ secrets.API_KEY }}
+  - variable: AUTH_DOMAIN
+    secret: ${{ secrets.AUTH_DOMAIN }}
+  - variable: DB_URL
+    secret: ${{ secrets.DB_URL }}
+  - variable: APP_ID
+    secret: ${{ secrets.APP_ID }}
