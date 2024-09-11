@@ -20,7 +20,7 @@ const Portfolio = ({}) => {
   }, []);
   return (
     <div className={styles.container}>
-      <Header number={"02"} title="Portfolio" subtitle="My Latest Work:" />
+      <Header number={"02"} title="Portfolio" subtitle="What I have been building:" />
       <div className={styles.projects}>
         {projects?.map((project: any) => (
           <Link
