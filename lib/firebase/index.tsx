@@ -10,6 +10,7 @@ if (!DB_NAME) {
     "You need to define a NEXT_PUBLIC_DB_NAME variable in your .env"
   );
 }
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app, DB_NAME);
